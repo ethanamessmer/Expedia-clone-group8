@@ -80,9 +80,10 @@ export const Register = () => {
   function handleVerifyNumber() {
     document.querySelector("#nextButton").innerText = "Please wait...";
     onCapture();
-    const phoneNumber = `+91${number}`;
+    const phoneNumber = number.startsWith("+") ? number : `+91${number}`;
     const appVerifier = window.recaptchaVerifier;
-    if (number.length === 10) {
+    const phoneRegex = /^\+[1-9]\d{6,14}$/;
+    if (phoneRegex.test(number)) {
       if (exist) {
         document.querySelector("#loginMesageError").innerHTML =
           "User Alredy exist";
@@ -103,6 +104,7 @@ export const Register = () => {
           })
           .catch((error) => {
             // Error; SMS not sent
+            console.error("Firebase OTP error:", error); 
             // document.querySelector("#nextButton").innerText = 'Server Error'
             // ...
           });
@@ -166,7 +168,7 @@ export const Register = () => {
             <label htmlFor="">Enter Your Number</label>
             <span>
               <input
-                type="number"
+                type="tel"
                 readOnly={verify}
                 name="number"
                 value={number}
