@@ -6,6 +6,9 @@ import { Route, Routes } from "react-router-dom";
 import { AdminDashboard } from "./Admin/AdminDashboard";
 import { AdminProducts } from "./Admin/AdminProducts";
 import { AllHotels } from "./Admin/AllHotels";
+import AdminUsers from "./Admin/AdminUsers";
+import AdminGiftcards from "./Admin/AdminGiftcards";
+import AdminPackages from "./Admin/AdminPackages";
 import { Destination } from "./ThingsTodo/Destination";
 import HomePage from "./HomePage";
 import { Login } from "./Login";
@@ -23,6 +26,9 @@ export const AllRoutes = () => {
             <Route path="/admin/adminflight" element={<Admin />} />
             <Route path="/admin/adminstay" element={<AdminStay />} />
             <Route path="/admin/products" element={<AdminProducts />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
+            <Route path="/admin/giftcards" element={<AdminGiftcards />} />
+            <Route path="/admin/packages" element={<AdminPackages />} />
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/admin/hotels" element={<AllHotels />} />
