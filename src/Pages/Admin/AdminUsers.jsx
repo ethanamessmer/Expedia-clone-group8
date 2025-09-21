@@ -77,9 +77,7 @@ const AdminUsers = () => {
           {loading ? <h1>Please wait...</h1> : ""}
           {users.slice(0, limit).map((u, i) => (
             <div key={u.id || i} className="adminProductlist">
-              <span>
-                <img src={u.avatar || "https://via.placeholder.com/80"} alt="" />
-              </span>
+              
               <span>
                 {u.user_name || u.name || u.username || "—"}
               </span>
