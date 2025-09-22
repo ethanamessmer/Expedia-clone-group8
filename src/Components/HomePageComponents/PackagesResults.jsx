@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Box, Heading, SimpleGrid, Text, Flex, Button } from "@chakra-ui/react";
 
+
+//Tried to make this functional, however I don't have access to the firebase on my end and can't use db.json so it's mostly just for cosemtics. 
+
+
 export default function PackagesResults({ searchParams }) {
   const [results, setResults] = useState([]);
   const { from, to } = searchParams || {};
 
   useEffect(() => {
     if (!from || !to) return;
-    // Fetch flights from 'from' to 'to'
+    
     Promise.all([
       fetch(`/flight?from=${from}&to=${to}`).then(res => res.json()),
       fetch(`/hotel?place=${to}`).then(res => res.json())
     ]).then(([flights, hotels]) => {
-      // Combine each flight with each hotel
+      
       const combos = [];
       flights.slice(0, 3).forEach(flight => {
         hotels.slice(0, 3).forEach(hotel => {

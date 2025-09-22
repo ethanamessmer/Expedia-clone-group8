@@ -5,6 +5,7 @@ import { InputBox } from '../../Pages/ThingsTodo/InputBox'
 import Flights from '../../Pages/Flights/Flight'
 import PackagesInputBox from "./PackagesInputBox";
 import PackagesResults from "./PackagesResults";
+import CarInputBox from './CarInputBox';
 
 
 const MainInputBox = () => {
@@ -36,7 +37,7 @@ const MainInputBox = () => {
                         <Flights/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Cars</p>
+                        <CarInputBox/>
                     </TabPanel>
                     <TabPanel>
                         <InputBox/>
