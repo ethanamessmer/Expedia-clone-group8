@@ -55,6 +55,7 @@ export const AdminProducts = () => {
           <h1><Link to={"/admin/adminstay"}>Add Stays</Link></h1>
           <h1><Link to={'/admin/adminuser'}>Add User</Link></h1>
           <h1><Link to={'/admin/admingiftcard'}>Add Giftcard</Link></h1>
+          <h1><Link to={'/admin/adminpackage'}>Add Package</Link></h1>
           <h1><Link to={"/admin/products"}>All Flights</Link></h1>
           <h1><Link to={"/admin/hotels"}>All Hotels</Link></h1>
           <h1><Link to={'/admin/users'}>All Users</Link></h1>
