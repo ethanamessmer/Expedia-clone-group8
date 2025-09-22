@@ -9,6 +9,7 @@ import { AllHotels } from "./Admin/AllHotels";
 import AdminUsers from "./Admin/AdminUsers";
 import AdminGiftcards from "./Admin/AdminGiftcards";
 import AdminPackages from "./Admin/AdminPackages";
+import AdminUser from "./Admin/AdminUser";
 import { Destination } from "./ThingsTodo/Destination";
 import HomePage from "./HomePage";
 import { Login } from "./Login";
@@ -29,6 +30,7 @@ export const AllRoutes = () => {
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/admin/giftcards" element={<AdminGiftcards />} />
             <Route path="/admin/packages" element={<AdminPackages />} />
+            <Route path="/admin/adminuser" element={<AdminUser />} />
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/admin/hotels" element={<AllHotels />} />

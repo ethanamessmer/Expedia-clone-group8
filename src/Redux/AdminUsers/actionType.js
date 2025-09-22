@@ -1,0 +1,8 @@
+export const USERS_REQUEST = "USERS_REQUEST";
+export const USERS_FAILURE = "USERS_FAILURE";
+
+export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS";
+export const POST_USER_SUCCESS = "POST_USER_SUCCESS";
+
+export const FETCH_USERS = "FETCH_USERS";
+export const DELETE_USER = "DELETE_USER";
