@@ -23,7 +23,6 @@ export const AdminStay = () => {
     });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
     console.log(hotel);
     dispatch(addHotel(hotel));
     setHotel(initialState);
@@ -37,6 +36,7 @@ export const AdminStay = () => {
           <h1><Link to={"/admin/adminflight"}>Add Flight</Link></h1>
           <h1><Link to={"/admin/adminstay"}>Add Stays</Link></h1>
           <h1><Link to={'/admin/adminuser'}>Add User</Link></h1>
+          <h1><Link to={'/admin/admingiftcard'}>Add Giftcard</Link></h1>
           <h1><Link to={"/admin/products"}>All Flights</Link></h1>
           <h1><Link to={"/admin/hotels"}>All Hotels</Link></h1>
           <h1><Link to={'/admin/users'}>All Users</Link></h1>
