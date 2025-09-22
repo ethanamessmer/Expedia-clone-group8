@@ -30,7 +30,6 @@ const AdminPackages = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Delete this package?")) return;
     try {
       await axios.delete(`http://localhost:8080/Things_todo/${id}`);
       setPackages((prev) => prev.filter((p) => p.id !== id));

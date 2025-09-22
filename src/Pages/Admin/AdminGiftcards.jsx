@@ -30,7 +30,6 @@ const AdminGiftcards = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Delete this gift card?")) return;
     try {
       await axios.delete(`http://localhost:8080/giftcards/${id}`);
       setCards((prev) => prev.filter((c) => c.id !== id));

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./adminProduct.css";
 import { useDispatch } from "react-redux";
+import { deleteUser } from "../../Redux/AdminUsers/action";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,24 +35,26 @@ const AdminUsers = () => {
     loadUsers();
   }, []);
 
-  const handleDelete = async (id) => {
-    if (!window.confirm("Delete this user?")) return;
-    try {
-      await axios.delete(`http://localhost:8080/users/${id}`);
-      // refresh list
-      setUsers((prev) => prev.filter((u) => u.id !== id));
-      toast.success("User removed", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to delete user");
-    }
+  const handleDelete = (deleteId) => {
+    // dispatch redux thunk to delete from server
+    dispatch(deleteUser(deleteId));
+    // update local list immediately so UI reflects deletion
+    setUsers((prev) => prev.filter((u) => u.id !== deleteId));
+    toast.success("User Removed", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   return (
     <div className="adminProductMain">
+      <ToastContainer />
       <div className="adminSideBr">
         <h1><Link to={'/admin'}>Home</Link></h1>
         <h1><Link to={'/admin/adminflight'}>Add Flight</Link></h1>
