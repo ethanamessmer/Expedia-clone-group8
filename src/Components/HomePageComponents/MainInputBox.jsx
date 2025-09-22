@@ -3,8 +3,14 @@ import Stay from '../../Pages/Stay/Stay';
 import React from 'react'
 import { InputBox } from '../../Pages/ThingsTodo/InputBox'
 import Flights from '../../Pages/Flights/Flight'
+import PackagesInputBox from "./PackagesInputBox";
+import PackagesResults from "./PackagesResults";
+import CarInputBox from './CarInputBox';
+
 
 const MainInputBox = () => {
+  const [packageSearch, setPackageSearch] = React.useState(null);
+
   return (
     <Box width={'85%'}   m={'auto'} mt={10} border='1px solid #BDBDBD' borderRadius='7px' >
             <Tabs position="relative" variant="unstyled"  >
@@ -31,13 +37,14 @@ const MainInputBox = () => {
                         <Flights/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Cars</p>
+                        <CarInputBox/>
                     </TabPanel>
                     <TabPanel>
                         <InputBox/>
                     </TabPanel>
                     <TabPanel>
-                        <p>Packages</p>
+                      <PackagesInputBox onSearch={setPackageSearch} />
+                      <PackagesResults searchParams={packageSearch || {}} />
                     </TabPanel>
                 </TabPanels>
             </Tabs>
