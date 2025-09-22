@@ -76,16 +76,21 @@ export const Register = () => {
     );
   }
 
+    function formatPhoneNumber(num) {
+      let cleaned = num.replace(/\D/g, ""); 
+      if (!cleaned.startsWith("+")) {
+        cleaned = "+" + cleaned;
+      }
+      return cleaned;
+    }
+
   //   Verify button
   function handleVerifyNumber() {
     document.querySelector("#nextButton").innerText = "Please wait...";
     onCapture();
-    let phoneNumber = number.trim();
-    if (!phoneNumber.startsWith("+")) {
-      phoneNumber = `+1${phoneNumber}`;
-    }
+    const phoneNumber = formatPhoneNumber(number);
     const appVerifier = window.recaptchaVerifier;
-    const phoneRegex = /^\+[1-9]\d{6,14}$/;
+    const phoneRegex = /^\+[1-9]\d{6,14}$/; 
     if (phoneRegex.test(phoneNumber)) {
       if (exist) {
         document.querySelector("#loginMesageError").innerHTML =

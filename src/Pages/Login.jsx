@@ -64,11 +64,19 @@ export const Login = () => {
     );
   }
 
+  function formatPhoneNumber(num) {
+    let cleaned = num.replace(/\D/g, ""); 
+    if (!cleaned.startsWith("+")) {
+      cleaned = "+" + cleaned;
+    }
+    return cleaned;
+  }
+
   function handleVerifyNumber() {
     document.querySelector("#nextText").innerText = "Please wait...";
     onCapture();
 
-    const phoneNumber = number;
+    const phoneNumber = formatPhoneNumber(number);
     const appVerifier = window.recaptchaVerifier;
     const phoneRegex = /^\+[1-9]\d{6,14}$/; // E.164 format
 
