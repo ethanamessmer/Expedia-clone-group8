@@ -6,6 +6,8 @@ This project is a clone of the Expedia website, created by Team of 5 starting wi
 ## Additional Project Description ##
 This project has been edited by Sierra Brown, Jaden Burke, Drew Kearns, Ethan Messmer, and Tristan Nono. Future work could include: Making images/ads not static, making links fully connect to other websites, using an existing API to gain data for flights, hotels and such so that it's not limited to just certain areas, and a better search function.
 
+## Project Overview ##
+
 ### Tech Stack ###
 - HTML
 - CSS
