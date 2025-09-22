@@ -1,8 +1,10 @@
 # Chalo Ghume
 
-## This project is a clone of the Expedia website, created by Team of 5 starting with Kumkum (Team Lead), Ashish, Amit, Sagar Balsaraf, and Sarim . The purpose of this project is to showcase our skills and knowledge in HTML, CSS, JavaScript, React, Redux, and Json-Server. ##
+## Original Project Description ##
+This project is a clone of the Expedia website, created by Team of 5 starting with Kumkum (Team Lead), Ashish, Amit, Sagar Balsaraf, and Sarim . The purpose of this project is to showcase our skills and knowledge in HTML, CSS, JavaScript, React, Redux, and Json-Server.
 
-## This project has been edited by Sierra Brown, Jaden Burke, Drew Kearns, Ethan Messmer, and Tristan Nono. Future work could include: Making images/ads not static, making links fully connect to other websites, using an existing API to gain data for flights, hotels and such so that it's not limited to just certain areas, and a better search function. ##
+## Additional Project Description ##
+This project has been edited by Sierra Brown, Jaden Burke, Drew Kearns, Ethan Messmer, and Tristan Nono. Future work could include: Making images/ads not static, making links fully connect to other websites, using an existing API to gain data for flights, hotels and such so that it's not limited to just certain areas, and a better search function.
 
 ### Tech Stack ###
 - HTML
