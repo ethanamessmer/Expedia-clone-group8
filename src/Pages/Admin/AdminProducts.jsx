@@ -53,8 +53,15 @@ export const AdminProducts = () => {
           <h1><Link to={"/admin"}>Home</Link></h1>
           <h1><Link to={"/admin/adminflight"}>Add Flight</Link></h1>
           <h1><Link to={"/admin/adminstay"}>Add Stays</Link></h1>
+          <h1><Link to={'/admin/adminuser'}>Add User</Link></h1>
+          <h1><Link to={'/admin/admingiftcard'}>Add Giftcard</Link></h1>
+          <h1><Link to={'/admin/adminpackage'}>Add Package</Link></h1>
           <h1><Link to={"/admin/products"}>All Flights</Link></h1>
           <h1><Link to={"/admin/hotels"}>All Hotels</Link></h1>
+          <h1><Link to={'/admin/users'}>All Users</Link></h1>
+          <h1><Link to={'/admin/giftcards'}>All Giftcards</Link></h1>
+          <h1><Link to={'/admin/packages'}>All Packages</Link></h1>
+          
           <h1><Link to={"/"}>Log out</Link></h1>
         </div>
         <div className="adminProductbox">
@@ -80,9 +87,6 @@ export const AdminProducts = () => {
               <span>
                 <button onClick={() => handleDeleteFlights(ele.id)}>
                   Delete <i className="fa fa-trash"></i>
-                </button>
-                <button>
-                  Edit <i className="fa fa-pencil"></i>
                 </button>
               </span>
             </div>

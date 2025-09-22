@@ -61,20 +61,9 @@ export const fetchFlightProducts = (limit) => (dispatch) => {
 
 export const DeleteFlightProducts = (deleteId) => async (dispatch) => {
   try {
-    const res = await axios(
-      `http://localhost:8080/flight?${deleteId}`, //https://makemytrip-api-data.onrender.com/flight/${deleteId}
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    let data = await res.json();
-    console.log(data);
-
+    await axios.delete(`http://localhost:8080/flight/${deleteId}`);
     dispatch(handleDeleteProduct(deleteId));
   } catch (e) {
-    console.log(e);
+    console.error("Failed to delete flight", e);
   }
 };
