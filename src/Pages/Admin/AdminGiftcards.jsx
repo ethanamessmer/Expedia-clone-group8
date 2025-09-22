@@ -80,7 +80,7 @@ const AdminGiftcards = () => {
             <span></span>
             <span></span>
             <span>
-              <button onClick={() => handleDelete(c.id)}>Delete</button>
+              <button onClick={() => handleDelete(c.id)}>Delete <i className="fa fa-trash"></i></button>
             </span>
           </div>
         ))}

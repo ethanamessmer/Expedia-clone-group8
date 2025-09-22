@@ -80,7 +80,7 @@ const AdminPackages = () => {
             <span>{p.rating || '—'}</span>
             <span>{p.adress || '—'}</span>
             <span>
-              <button onClick={() => handleDelete(p.id)}>Delete</button>
+              <button onClick={() => handleDelete(p.id)}>Delete <i className="fa fa-trash"></i></button>
             </span>
           </div>
         ))}

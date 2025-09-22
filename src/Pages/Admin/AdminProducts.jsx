@@ -84,9 +84,6 @@ export const AdminProducts = () => {
                 <button onClick={() => handleDeleteFlights(ele.id)}>
                   Delete <i className="fa fa-trash"></i>
                 </button>
-                <button>
-                  Edit <i className="fa fa-pencil"></i>
-                </button>
               </span>
             </div>
           ))}

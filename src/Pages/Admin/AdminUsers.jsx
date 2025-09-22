@@ -89,7 +89,7 @@ const AdminUsers = () => {
               <span>{u.dob || "no-dob"}</span>
               <span>{u.gender || "no-gender"}</span>
               <span>
-                <button onClick={() => handleDelete(u.id)}>Delete</button>
+                <button onClick={() => handleDelete(u.id)}>Delete <i className="fa fa-trash"></i></button>
               </span>
             </div>
           ))}

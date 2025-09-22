@@ -95,9 +95,6 @@ export const AllHotels = () => {
                 <button onClick={() => handleDeleteHotel(ele.id)}>
                   Delete <i className="fa fa-trash"></i>
                 </button>
-                <button>
-                  Edit <i className="fa fa-pencil"></i>
-                </button>
               </span>
             </div>
           ))}

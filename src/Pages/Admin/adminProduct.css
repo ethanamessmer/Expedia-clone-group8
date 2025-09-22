@@ -86,10 +86,14 @@
 
 .adminProductMain > .adminProductbox > .adminProductlist > span {
   display: flex;
-  gap: 30px;
+  gap: 12px;
+  justify-content: flex-start; /* left-align content in each column */
+  align-items: center;
+  flex: 0 0 15%; /* default column width */
 }
 .adminProductMain > .adminProductbox > .adminProductlist > span > img {
   width: 50px;
+  display: block;
 }
 
 .adminProductMain > .adminProductbox > .adminProductlist > span > button {
@@ -133,4 +137,45 @@
   background: royalblue;
   padding: 5px 10px;
   color: white;
+}
+
+/* title column: allow wrapping and take more space */
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(2) {
+  flex: 1 1 40%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Make action column (last) shrink to content and align right-hand side */
+.adminProductMain > .adminProductbox > .adminProductlist > span:last-child {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+/* Ensure text inside spans is left-aligned */
+.adminProductMain > .adminProductbox > .adminProductlist > span {
+  text-align: left;
+}
+
+/* Column sizing for consistent alignment across admin lists */
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(1) {
+  flex: 0 0 18%;
+}
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(2) {
+  flex: 1 1 30%;
+}
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(3) {
+  flex: 0 0 12%;
+}
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(4) {
+  flex: 0 0 12%;
+}
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(5) {
+  flex: 0 0 12%;
+}
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(6) {
+  flex: 0 0 12%;
+}
+.adminProductMain > .adminProductbox > .adminProductlist > span:nth-child(7) {
+  flex: 0 0 8%;
 }
