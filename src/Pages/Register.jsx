@@ -80,10 +80,13 @@ export const Register = () => {
   function handleVerifyNumber() {
     document.querySelector("#nextButton").innerText = "Please wait...";
     onCapture();
-    const phoneNumber = number.startsWith("+") ? number : `+91${number}`;
+    let phoneNumber = number.trim();
+    if (!phoneNumber.startsWith("+")) {
+      phoneNumber = `+1${phoneNumber}`;
+    }
     const appVerifier = window.recaptchaVerifier;
     const phoneRegex = /^\+[1-9]\d{6,14}$/;
-    if (phoneRegex.test(number)) {
+    if (phoneRegex.test(phoneNumber)) {
       if (exist) {
         document.querySelector("#loginMesageError").innerHTML =
           "User Alredy exist";
