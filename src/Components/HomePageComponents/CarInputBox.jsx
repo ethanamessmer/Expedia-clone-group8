@@ -1,33 +1,22 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Button,
-  NumberInput,
-  NumberInputField,
-  Heading,
-  Flex,
-  FormLabel,
-} from '@chakra-ui/react';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import carLocations from '../../Pages/Stay/city'; 
+import { Box, Button, Heading, Flex, FormLabel, NumberInput, NumberInputField, Select } from '@chakra-ui/react';
 
-const CarInputBox = ({ onSearch }) => {
-  const [location, setLocation] = useState('');
-  const [days, setDays] = useState(1);
-  const [price, setPrice] = useState('');
+const initialState = {
+  location: "",
+  price: "",
+};
 
-  const handleOnSelect = (item) => {
-    setLocation(item.name);
+export default function CarInputBox({ onSearch }) {
+  const [form, setForm] = useState(initialState);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
-
-  const formatResult = (item) => (
-    <span style={{ display: "block", textAlign: "left" }}>{item.name}</span>
-  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onSearch) {
-      onSearch({ location, days, price });
+      onSearch(form);
     }
   };
 
@@ -48,36 +37,18 @@ const CarInputBox = ({ onSearch }) => {
         <Flex gap={4} flexWrap="wrap">
           <Box flex="1" minW="180px">
             <FormLabel>Location</FormLabel>
-            <ReactSearchAutocomplete
-              items={carLocations}
-              onSelect={handleOnSelect}
-              formatResult={formatResult}
-              showIcon={false}
-              placeholder="Enter city or airport"
-              styling={{
-                height: "44px",
-                border: "1px solid #dfe1e5",
-                borderRadius: "6px",
-                backgroundColor: "white",
-                boxShadow: "rgba(32, 33, 36, 0.28) 0px 1px 6px 0px",
-                hoverBackgroundColor: "#eee",
-                color: "#212121",
-                fontSize: "16px",
-                fontFamily: "Arial",
-                searchIconMargin: "0 0 0 16px",
-              }}
-            />
+            <Select name="location" value={form.location} onChange={handleChange}>
+              <option value="">Select City</option>
+              <option value="DELHI">DELHI</option>
+              <option value="MUMBAI">MUMBAI</option>
+              <option value="BANGLURU">BANGLURU</option>
+              <option value="PUNE">PUNE</option>
+            </Select>
           </Box>
           <Box flex="1" minW="120px">
-            <FormLabel>Days</FormLabel>
-            <NumberInput min={1} value={days} onChange={(val) => setDays(Number(val))}>
-              <NumberInputField bg="gray.50" />
-            </NumberInput>
-          </Box>
-          <Box flex="1" minW="120px">
-            <FormLabel>Max Price ($)</FormLabel>
-            <NumberInput min={0} value={price} onChange={(val) => setPrice(val)}>
-              <NumberInputField bg="gray.50" />
+            <FormLabel>Max Cost Per Day</FormLabel>
+            <NumberInput min={0} value={form.price} onChange={val => setForm({ ...form, price: val })}>
+              <NumberInputField name="price" bg="gray.50" />
             </NumberInput>
           </Box>
           <Box alignSelf="flex-end">
@@ -89,6 +60,4 @@ const CarInputBox = ({ onSearch }) => {
       </form>
     </Box>
   );
-};
-
-export default CarInputBox;
+}

@@ -6,10 +6,12 @@ import Flights from '../../Pages/Flights/Flight'
 import PackagesInputBox from "./PackagesInputBox";
 import PackagesResults from "./PackagesResults";
 import CarInputBox from './CarInputBox';
+import CarResults from './CarResults'; 
 
 
 const MainInputBox = () => {
   const [packageSearch, setPackageSearch] = React.useState(null);
+  const [carSearch, setCarSearch] = React.useState(null); 
 
   return (
     <Box width={'85%'}   m={'auto'} mt={10} border='1px solid #BDBDBD' borderRadius='7px' >
@@ -37,7 +39,8 @@ const MainInputBox = () => {
                         <Flights/>
                     </TabPanel>
                     <TabPanel>
-                        <CarInputBox/>
+                        <CarInputBox onSearch={setCarSearch} />
+                        <CarResults searchParams={carSearch || {}} />
                     </TabPanel>
                     <TabPanel>
                         <InputBox/>
